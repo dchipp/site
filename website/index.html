@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>chip's website</title>
+    </head>
+    <body>
+        <center>
+            <h1 id="mainHeader" onclick="changeText(this)">chip's website</h1>
+            <hr>
+        </center>
+    </body>
+
+    <style>
+        body{
+            background-color: rgb(53, 53, 53);
+            font-family: Arial, sans-serif;
+            color:rgb(240, 240, 240)
+        }
+        center{
+            margin-inline:10%
+        }
+            
+    </style>
+    <script>
+        
+        var animating = false;
+        function changeText(element){
+            if(!animating){
+                animating=true;
+                const words = ["site","creation","webpage", "awesome wesbite"]
+                const currentWord = element.textContent.replace("chip's ","");
+                let chosen = words[Math.floor(Math.random() * words.length)]
+                if(chosen==currentWord){
+                    animating=false;
+                    return changeText(element);
+                }
+                let index = currentWord.length;
+                let newWord = false;
+                 function change(currentWord){
+                    if(!newWord&&index!=0){
+                        element.textContent=element.textContent.slice(0, -1)
+                        setTimeout(()=>change(),50);
+                        index--;
+                        if(index==0){newWord=true;index=chosen.length}
+                    }
+                    if(newWord&&index!=0){
+                        element.textContent+=chosen[chosen.length-index]
+                        setTimeout(()=>change(),150);
+                        index--;
+                        if(index==0)animating=false;
+                    }
+                }
+                change();
+            }
+        }
+        
+    </script>
+</html>
