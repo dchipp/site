@@ -7,10 +7,21 @@
         <title>chip's website</title>
     </head>
     <body>
-        <center>
-            <h1 id="mainHeader" onclick="changeText(this)">chip's website</h1>
-            <hr>
-        </center>
+        <div class="center">
+            <div>
+                <h1 onclick="changeText(this)">chip's website</h1>
+            </div>
+        </div>
+        
+        <div class="header">
+                <hr>
+                <div onclick="toggleMenu(this)">
+                    <div class="menu1"></div>
+                    <div class="menu2"></div>
+                    <div class="menu3"></div> 
+                </div>
+        </div>
+
     </body>
 
     <style>
@@ -19,22 +30,44 @@
             font-family: Arial, sans-serif;
             color:rgb(240, 240, 240)
         }
-        center{
-            margin-inline:10%
+        .center{
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
-            
+        hr{
+            margin-inline:10%;
+            margin-bottom:10px;
+        }
+        .menu1,.menu2,.menu3{
+            width:35px;
+            height: 5px;
+            margin:6px; 
+            margin-inline:10%;
+            background-color: aliceblue;
+            transition: 0.2s;
+        }
+        .change .menu1{
+            transform: translate(0,11px);
+        }
+        .change .menu3{
+            transform: translate(0,-11px);
+        }
+        .change .menu2{
+            background-color: transparent;
+        }
     </style>
     <script>
         
-        var animating = false;
+        var animatingText = false;
         function changeText(element){
-            if(!animating){
-                animating=true;
+            if(!animatingText){
+                animatingText=true;
                 const words = ["site","creation","webpage", "awesome website", "personal site"]
                 const currentWord = element.textContent.replace("chip's ","");
                 let chosen = words[Math.floor(Math.random() * words.length)]
                 if(chosen==currentWord){
-                    animating=false;
+                    animatingText=false;
                     return changeText(element);
                 }
                 let index = currentWord.length;
@@ -50,12 +83,14 @@
                         element.textContent+=chosen[chosen.length-index]
                         setTimeout(()=>change(),150);
                         index--;
-                        if(index==0)animating=false;
+                        if(index==0)animatingText=false;
                     }
                 }
                 change();
             }
         }
-        
+        function toggleMenu(element){
+            element.classList.toggle("change")
+        }
     </script>
 </html>
