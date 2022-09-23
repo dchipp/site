@@ -35,16 +35,6 @@
         </div>  
     </body>
     <script>
-        setInterval(() => {
-            if(window.innerWidth<600){
-            document.getElementById("desktopViewID").classList.add("hide")
-            document.getElementById("mobileViewID").classList.remove("hide")
-        } else {
-            document.getElementById("desktopViewID").classList.remove("hide")
-            document.getElementById("mobileViewID").classList.add("hide")
-            document.getElementById("mobileViewID").classList.remove("change")
-        }
-        });
         
         function toggleMenu(element){element.classList.toggle("change")}
 
