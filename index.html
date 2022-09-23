@@ -4,55 +4,33 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css" />
         <title>chip's website</title>
     </head>
     <body>
-        <div class="center">
-            <div>
-                <h1 onclick="changeText(this)">chip's website</h1>
-            </div>
-        </div>
-        
-        <div class="header">
-                <hr>
-                <div class="headerButtons" id="headerButtonsID">
-                    <div class="headerBut"><a href="/">Home</a></div>
-                    <div class="headerBut"><a href="/test1">Test 1</a></div>
-                    <div class="headerBut"><a href="/test2">Test 2</a></div>
-                    <div class="headerBut"><a href="/test3">Test 3</a></div>
+        <div class="mainPage">
+            <div class="center">
+                <div>
+                    <h1 onclick="changeText(this)">chip's website</h1>
                 </div>
-        </div>
+            </div>
+            
+            <div class="header">
+                    <hr>
+                    <div class="headerButtons" id="headerButtonsID">
+                        <div class="headerBut1"><a href="/">Home</a></div>
+                        <div class="headerBut2"><a href="/test1">Test 1</a></div>
+                        <div class="headerBut3"><a href="/test2">Test 2</a></div>
+                        <div class="headerBut4"><a href="/test3">Test 3</a></div>
+                    </div>
+            </div>
+        </div>  
 
     </body>
-
-    <style>
-        body{
-            background-color: rgb(53, 53, 53);
-            font-family: Arial, sans-serif;
-            color:rgb(240, 240, 240)
-        }
-        .center{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-        hr{
-            margin-inline:5%;
-            margin-bottom:10px;
-        }
-        .headerButtons{
-            display: flex;
-            justify-content: center;
-        }
-        .headerBut{
-            color: red;
-  text-decoration: none;
-  text-transform: uppercase;
-        }
-        
-    </style>
     <script>
-        
+        if(screen.width<900){
+            document.getElementById("headerButtonsID").classList.toggle("hide")
+        }
         var animatingText = false;
         function changeText(element){
             if(!animatingText){
