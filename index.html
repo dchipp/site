@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
         <title>chip's website</title>
     </head>
     <body>
@@ -15,50 +16,19 @@
         
         <div class="header">
                 <hr>
-                <div onclick="toggleMenu(this)">
-                    <div class="menu1"></div>
-                    <div class="menu2"></div>
-                    <div class="menu3"></div> 
+                <div class="headerButtons" id="headerButtonsID">
+                    <div class="headerBut1"><a href="/">Home</a></div>
+                    <div class="headerBut2"><a href="/test1">Test 1</a></div>
+                    <div class="headerBut3"><a href="/test2">Test 2</a></div>
+                    <div class="headerBut4"><a href="/test3">Test 3</a></div>
                 </div>
         </div>
 
     </body>
-
-    <style>
-        body{
-            background-color: rgb(53, 53, 53);
-            font-family: Arial, sans-serif;
-            color:rgb(240, 240, 240)
-        }
-        .center{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-        }
-        hr{
-            margin-inline:10%;
-            margin-bottom:10px;
-        }
-        .menu1,.menu2,.menu3{
-            width:35px;
-            height: 5px;
-            margin:6px; 
-            margin-inline:10%;
-            background-color: aliceblue;
-            transition: 0.2s;
-        }
-        .change .menu1{
-            transform: translate(0,11px);
-        }
-        .change .menu3{
-            transform: translate(0,-11px);
-        }
-        .change .menu2{
-            background-color: transparent;
-        }
-    </style>
     <script>
-        
+        if(screen.width<900){
+            document.getElementById("headerButtonsID").classList.toggle("hide")
+        }
         var animatingText = false;
         function changeText(element){
             if(!animatingText){
@@ -94,3 +64,28 @@
         }
     </script>
 </html>
+
+
+<!--.menu1,.menu2,.menu3{
+            width:35px;
+            height: 5px;
+            margin:6px; 
+            margin-inline:10%;
+            background-color: aliceblue;
+            transition: 0.2s;
+        }
+        .change .menu1{
+            transform: translate(0,11px);
+        }
+        .change .menu3{
+            transform: translate(0,-11px);
+        }
+        .change .menu2{
+            background-color: transparent;
+        }
+    <div onclick="toggleMenu(this)">
+                    <div class="menu1"></div>
+                    <div class="menu2"></div>
+                    <div class="menu3"></div> 
+                </div>
+    -->
