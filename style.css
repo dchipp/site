@@ -1,0 +1,45 @@
+body{
+    background-color: rgb(53, 53, 53);
+    font-family: Arial, sans-serif;
+    color:rgb(240, 240, 240)
+}
+.center{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+hr{
+    margin-inline:5%;
+    margin-bottom:10px;
+}
+.headerButtons{
+    display: block;
+    margin-inline:5%;
+    display: flex;
+    justify-content: right;
+}
+.headerButtons a{
+    text-decoration: none;
+    color: white;
+    transition: 0.2s;
+    margin-top: 15px;
+}
+.headerBut1,.headerBut2,.headerBut3,.headerBut4{
+    display: flex;
+    justify-content: center;
+    width:90px;
+    height: 50px;
+}
+.headerBut1:hover,.headerBut2:hover,.headerBut3:hover,.headerBut4:hover{
+    font-size: 130%;
+    background-color: gray;
+    animation-name: backgroundChangeOnHover;
+    animation-duration: 0.3s;
+}
+@keyframes backgroundChangeOnHover{
+    0%{border-radius: 50%;}
+    100%{border-radius: 0%;}
+}
+.hide.headerButtons{
+    display: none;
+}
