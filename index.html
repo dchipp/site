@@ -17,20 +17,37 @@
             
             <div class="header">
                     <hr>
-                    <div class="headerButtons" id="headerButtonsID">
-                        <div class="headerBut1"><a href="/">Home</a></div>
-                        <div class="headerBut2"><a href="/">Test 1</a></div>
-                        <div class="headerBut3"><a href="/">Test 2</a></div>
-                        <div class="headerBut4"><a href="/">Test 3</a></div>
+                    <div class="mobileView" id="mobileViewID" onclick="toggleMenu(this)">
+                        <div class="menuButtons" id="menuButtonsID">
+                            <div class="menu1"></div>
+                            <div class="menu2"></div>
+                            <div class="menu3"></div>
+                        </div>
+                    </div>
+                    <div class="desktopView" id="desktopViewID">
+                        <div class="headerButtons" id="headerButtonsID">
+                            <div class="headerBut1"><a href="/">Home</a></div>
+                            <div class="headerBut2"><a href="/test1">Projects</a></div>
+                            <div class="headerBut3"><a href="/test2">Contacts</a></div>
+                        </div>
                     </div>
             </div>
         </div>  
-
     </body>
     <script>
-        if(screen.width<900){
-            document.getElementById("headerButtonsID").classList.toggle("hide")
+        setInterval(() => {
+            if(window.innerWidth<600){
+            document.getElementById("desktopViewID").classList.add("hide")
+            document.getElementById("mobileViewID").classList.remove("hide")
+        } else {
+            document.getElementById("desktopViewID").classList.remove("hide")
+            document.getElementById("mobileViewID").classList.add("hide")
+            document.getElementById("mobileViewID").classList.remove("change")
         }
+        });
+        
+        function toggleMenu(element){element.classList.toggle("change")}
+
         var animatingText = false;
         function changeText(element){
             if(!animatingText){
@@ -59,35 +76,5 @@
                     }
                 }
                 change();
-            }
-        }
-        function toggleMenu(element){
-            element.classList.toggle("change")
-        }
-    </script>
-</html>
-
-
-<!--.menu1,.menu2,.menu3{
-            width:35px;
-            height: 5px;
-            margin:6px; 
-            margin-inline:10%;
-            background-color: aliceblue;
-            transition: 0.2s;
-        }
-        .change .menu1{
-            transform: translate(0,11px);
-        }
-        .change .menu3{
-            transform: translate(0,-11px);
-        }
-        .change .menu2{
-            background-color: transparent;
-        }
-    <div onclick="toggleMenu(this)">
-                    <div class="menu1"></div>
-                    <div class="menu2"></div>
-                    <div class="menu3"></div> 
-                </div>
-    -->
+            }}
+    </script></html>
