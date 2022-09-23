@@ -20,12 +20,13 @@ hr{
     margin-bottom:10px;
 }
 .headerButtons{
-    display: block;
+    display: none;
     margin-inline:5%;
     display: flex;
     justify-content: right;
 }
 .headerButtons a{
+    
     text-decoration: none;
     color: white;
     transition: 0.2s;
@@ -43,6 +44,36 @@ hr{
     animation-name: backgroundChangeOnHover;
     animation-duration: 0.3s;
 }
+.menuButtons{
+    margin-left:5%;
+    width: 43px;
+    height: 33px;
+}
+.menu1,.menu2,.menu3{
+    width:35px;
+    height: 5px;
+    margin:6px; 
+    margin-inline:10%;
+    background-color: aliceblue;
+    
+    transition: 0.2s;
+}
+.change .menu1{
+    transform: translate(0,11px);
+}
+.change .menu3{
+    transform: translate(0,-11px);
+}
+.change .menu2{
+    background-color: transparent;
+}
+.hide.mobileView{
+    display: none;
+}
+.hide.desktopView{
+    display: none;
+}
+
 @keyframes backgroundChangeOnHover{
     0%{border-radius: 50%;}
     100%{border-radius: 0%;}
