@@ -27,16 +27,30 @@ hr{
 }
 .headerButtons a{
     
+    position: relative;
     text-decoration: none;
+    text-align: center;
+    line-height : 55px;
     color: white;
     transition: 0.2s;
     margin-top: 15px;
+    width:90px;
+    height: 50px;
+    top: -20px;
+    pointer-events: initial;
+}
+.headerButtons #active{
+    text-decoration: underline;
+    width:80px;
+    height: 45px;
+    border: 3px solid rgb(207, 207, 207);
 }
 .headerBut1,.headerBut2,.headerBut3,.headerBut4{
     display: flex;
     justify-content: center;
     width:90px;
     height: 50px;
+    pointer-events: none;
 }
 .headerBut1:hover,.headerBut2:hover,.headerBut3:hover,.headerBut4:hover{
     font-size: 130%;
@@ -67,16 +81,90 @@ hr{
 .change .menu2{
     background-color: transparent;
 }
+.change .menuButtons{
+    background-color: rgb(160, 160, 160);
+}
 @media screen and (min-width: 600px) {
     .mobileView{
         display: none;
     }
 }
 @media screen and (max-width: 600px) {
-    .desktopView{
-        display: none;
+    .headerButtons{
+        display:none
     }
 }
+@media screen and (max-width: 600px) {
+    .showMenu.headerButtons{
+        top: 16%;
+        display: block;
+        position:absolute;
+        background-color: rgb(160, 160, 160);
+    }
+}
+/* projects*/
+.projects{
+    display: flex;
+    justify-content: space-evenly;
+}
+.projects .project{
+    background-color: rgb(100, 100, 100);
+    -moz-box-shadow:    3px 3px 5px 6px rgb(43, 43, 43);
+    -webkit-box-shadow: 3px 3px 5px 6px rgb(43, 43, 43);
+    box-shadow:         3px 3px 5px 6px rgb(43, 43, 43);
+    margin: 40px;
+    border-radius: 25px;
+    flex: 25%;
+    transition: 0.5s;
+}
+.project .mainProjectContentArea{
+    margin: 20px;
+}
+.project:hover{
+    transform: translate(10px, -5px);
+}
+.project .projectContentTitle{
+    font-size: 150%;
+}
+.project .mainProjectDescriptionArea{
+    background-color: rgb(53, 53, 53);
+    margin-top: 10px;
+    border-radius: 10px;
+    display: flex;
+}
+.project .projectContentVR{
+    background-color: aliceblue;
+    border-radius: 25px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 2px;
+    height: 100px;
+}
+.project .projectDescription{
+    margin-left: 5px;
+    margin-top: 15px;
+
+}
+.projectDescription a{
+    text-decoration: none;
+    color: blanchedalmond;
+}
+.projectDescription a:hover{
+    text-decoration: underline;
+    color: burlywood;
+}
+@media screen and (max-width: 600px) {
+    .projects {
+        flex-direction: column;
+    }
+    .projects .project{
+        margin-top: 5%;
+    }
+  }
+
+
+
 
 @keyframes backgroundChangeOnHover{
     0%{border-radius: 50%;}
