@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>chip's website</title>
+    </head>
+    <body>
+        <div class="mainPage">
+            <div class="center">
+                <div>
+                    <h1 onclick="changeText(this)">chip's website</h1>
+                </div>
+            </div>
+            
+            <div class="header">
+                    <hr>
+                    <div class="mobileView" id="mobileViewID" onclick="toggleMenu(this)">
+                        <div class="menuButtons" id="menuButtonsID">
+                            <div class="menu1"></div>
+                            <div class="menu2"></div>
+                            <div class="menu3"></div>
+                        </div>
+                    </div>
+                    <div  class="active" class="desktopView" id="desktopViewID">
+                        <div class="headerButtons" id="headerButtonsID">
+                            <div class="headerBut1"><a href="index.html">Home</a></div>
+                            <div class="headerBut2" id="active"><a href="projects.html">Projects</a></div>
+                            <div class="headerBut3"><a href="index.html">Contacts</a></div>
+                        </div>
+                    </div>
+            </div>
+
+
+            <div class="projects">
+                <div class="project" id="rps">
+                    <div class="mainProjectContentArea">
+                        <div class="projectContentTitle"><b>Rock, paper, Scissors!</b></div>
+                            <div class="mainProjectDescriptionArea">
+                            <div class="projectContentVR"></div>
+                            <div class="projectDescription">Currently this is just a test to try and develop a nice looking <i>layout</i> for the content inside this <b>project container</b>. It should allow me to easily implement modifications such as <i>text</i> <b>decoration</b>, but also <a href="https://www.google.com/" title="It will just take you to google.">link content</a> if i want to!</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project" id="ttt">
+                    <div class="mainProjectContentArea">
+                        <div class="projectContentTitle"><b>Test 1</b></div>
+                            <div class="mainProjectDescriptionArea">
+                            <div class="projectContentVR"></div>
+                            <div class="projectDescription">questo è un test</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>  
+    </body>
+    <script>
+               function toggleMenu(element){element.classList.toggle("change");document.getElementById("headerButtonsID").classList.toggle("showMenu")}
+    </script></html>
