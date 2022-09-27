@@ -26,8 +26,8 @@
                     </div>
                     <div class="desktopView" id="desktopViewID">
                         <div class="headerButtons" id="headerButtonsID">
-                            <div class="headerBut1"><a href="index.html">Home</a></div>
-                            <div class="headerBut2"><a href="index.html">Projects</a></div>
+                            <div class="headerBut1" id="active"><a href="index.html">Home</a></div>
+                            <div class="headerBut2"><a href="projects.html">Projects</a></div>
                             <div class="headerBut3"><a href="index.html">Contacts</a></div>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
     </body>
     <script>
         
-        function toggleMenu(element){element.classList.toggle("change")}
+        function toggleMenu(element){element.classList.toggle("change");document.getElementById("headerButtonsID").classList.toggle("showMenu")}
 
         var animatingText = false;
         function changeText(element){
