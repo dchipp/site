@@ -37,7 +37,9 @@
             <div class="projects">
                 <div class="project" id="rps">
                     <div class="mainProjectContentArea">
-                        <div class="projectContentTitle"><b>Rock, paper, Scissors!</b></div>
+                        <div class="projectContentTitle"><b>Rock, paper, Scissors!</b>
+                            <div class="projectPlayButton"><a href="rps.html">Try me!</a></div>
+                        </div>
                             <div class="mainProjectDescriptionArea">
                             <div class="projectContentVR"></div>
                             <div class="projectDescription">Currently this is just a test to try and develop a nice looking <i>layout</i> for the content inside this <b>project container</b>. It should allow me to easily implement modifications such as <i>text</i> <b>decoration</b>, but also <a href="https://www.google.com/" title="It will just take you to google.">link content</a> if i want to!</div>
@@ -61,4 +63,34 @@
     </body>
     <script>
                function toggleMenu(element){element.classList.toggle("change");document.getElementById("headerButtonsID").classList.toggle("showMenu")}
+    
+               var animatingText = false;
+        function changeText(element){
+            if(!animatingText){
+                animatingText=true;
+                const words = ["site","creation","webpage", "awesome website", "personal site"]
+                const currentWord = element.textContent.replace("chip's ","");
+                let chosen = words[Math.floor(Math.random() * words.length)]
+                if(chosen==currentWord){
+                    animatingText=false;
+                    return changeText(element);
+                }
+                let index = currentWord.length;
+                let newWord = false;
+                 function change(currentWord){
+                    if(!newWord&&index!=0){
+                        element.textContent=element.textContent.slice(0, -1)
+                        setTimeout(()=>change(),50);
+                        index--;
+                        if(index==0){newWord=true;index=chosen.length}
+                    }
+                    if(newWord&&index!=0){
+                        element.textContent+=chosen[chosen.length-index]
+                        setTimeout(()=>change(),150);
+                        index--;
+                        if(index==0)animatingText=false;
+                    }
+                }
+                change();
+            }}
     </script></html>
