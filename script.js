@@ -1,6 +1,6 @@
 const toTop = document.getElementById("toTop");
 
-document.addEventListener("scroll", scroll=>{
+document.addEventListener("scroll", scroll=>{ //show toTop
     if(window.scrollY >= 500){
         toTop.classList.add("toTop-show");
     } else {
@@ -8,6 +8,6 @@ document.addEventListener("scroll", scroll=>{
     }
 })
 
-document.getElementById("toTop").addEventListener("click", element=>{
+document.getElementById("toTop").addEventListener("click", element=>{  //bring to top
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
