@@ -18,7 +18,7 @@
     --light2: #9a80ca;
     --light3: #c3a3ff;
 }
-body{
+body{ 
     background-color: var(--dark3);
     height: 200vh;
 }
