@@ -131,8 +131,18 @@ body{
         flex-direction: row;
     }
     .navbar:hover{
-        height: 150px;
+        height: 80px;
         width: 100%;
+        filter: drop-shadow(0px 0px 0px black);
+    }
+    .navbar-element:hover>.navbar-element-text{
+        opacity: 0;
+        transform: translateY(0px);
+        text-shadow: 0px 0px 0px black;
+    }
+    .navbar-element-icon.active{
+        font-variation-settings:
+        'FILL' 1 !important;
     }
     .main{
         margin-left: 0px;
