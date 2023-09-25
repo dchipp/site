@@ -1,0 +1,59 @@
+.projects{
+    margin-top: 10%;
+    display: flex;
+    place-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding-inline: 10%;
+}
+.projects .row{
+    display: flex;
+    place-items: center;
+    flex-direction: column;
+}
+.projects .row .cards{
+    display: flex;
+    place-items: center;
+    flex-direction: row;
+}
+.projects .row .project{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--dark2);
+    padding: 20px;
+}
+.projects .row.ok::after{
+    content:"";
+    height: 2px;
+    width: 100%;
+    background: rgb(113,93,150);
+    background: radial-gradient(circle, rgba(113,93,150,1) 0%, rgba(43,32,49,1) 100%);
+}
+.projects .row .project.ok.top::after{
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    right: 0px;
+    background-color: red;
+    background: rgb(43,32,49);
+    background: linear-gradient(180deg, rgba(43,32,49,1) 0%, rgba(113,93,150,1) 100%);
+}
+.projects .row .project.ok.bottom::after{
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    right: 0px;
+    background-color: red;
+    background: rgb(43,32,49);
+    background: linear-gradient(180deg, rgba(113,93,150,1) 0%, rgba(43,32,49,1) 100%);
+}
+.projects .row .project h3{
+    color: var(--light2);
+}
+.projects .row .project .description{
+    color: var(--light1);
+}
