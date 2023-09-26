@@ -3,18 +3,24 @@
     display: flex;
     place-items: center;
     flex-direction: column;
+    position: relative;
     width: 100%;
     padding-inline: 10%;
+    overflow: hidden;
+}
+.projects .pointer{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: rgb(113,93,150);
+    background: radial-gradient(circle, rgba(113,93,150,1) 0%, rgba(0,0,0,0) 53%);
 }
 .projects .row{
     display: flex;
     place-items: center;
-    flex-direction: column;
-}
-.projects .row .cards{
-    display: flex;
-    place-items: center;
     flex-direction: row;
+    gap:4px;
+    margin-bottom: 4px;
 }
 .projects .row .project{
     position: relative;
@@ -23,33 +29,6 @@
     flex-direction: column;
     background-color: var(--dark2);
     padding: 20px;
-}
-.projects .row.ok::after{
-    content:"";
-    height: 2px;
-    width: 100%;
-    background: rgb(113,93,150);
-    background: radial-gradient(circle, rgba(113,93,150,1) 0%, rgba(43,32,49,1) 100%);
-}
-.projects .row .project.ok.top::after{
-    content: "";
-    position: absolute;
-    width: 2px;
-    height: 100%;
-    right: 0px;
-    background-color: red;
-    background: rgb(43,32,49);
-    background: linear-gradient(180deg, rgba(43,32,49,1) 0%, rgba(113,93,150,1) 100%);
-}
-.projects .row .project.ok.bottom::after{
-    content: "";
-    position: absolute;
-    width: 2px;
-    height: 100%;
-    right: 0px;
-    background-color: red;
-    background: rgb(43,32,49);
-    background: linear-gradient(180deg, rgba(113,93,150,1) 0%, rgba(43,32,49,1) 100%);
 }
 .projects .row .project h3{
     color: var(--light2);
